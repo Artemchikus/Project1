@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
-        
+
   deploy:
     name: Deploy on Heroku
     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
           # heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           # heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           # heroku_email: ${{secrets.HEROKU_EMAIL}}
-          heroku_api_key: "c836a00e-6dcb-4131-91da-d633771997d7"
+          heroku_api_key: "239297e9-3b13-4df5-9382-0885a17a7be5"
           heroku_app_name: "vrm-go-workshop-artemchikus"
           heroku_email: "fil.ar.alex@gmail.com"
           usedocker: true
