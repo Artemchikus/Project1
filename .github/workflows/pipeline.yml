@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          heroku_api_key: "239297e9-3b13-4df5-9382-0885a17a7be5"
+          heroku_api_key: "f1539f12-4eec-4700-a4ca-8060f312c247"
           heroku_app_name: "vrm-go-workshop-artemchikus"
           heroku_email: "fil.ar.alex@gmail.com"
           usedocker: true
