@@ -25,8 +25,9 @@ func main() {
 
 	r.Get("/hello", h.Hello)
 
-	log.Print("Satrting server:")
-	err = http.ListenAndServe(":8080", r)
+	path := cfg.Host+":"+cfg.Port
+	log.Printf("Satrting server at %s", path)
+	err = http.ListenAndServe(path, r)
 	log.Fatal(err)
 
 	log.Print("Shutting server down:")
