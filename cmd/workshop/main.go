@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/Artemchikus/internal/api/jokes"
 	"github.com/Artemchikus/internal/config"
 	"github.com/Artemchikus/internal/handler"
 
@@ -19,7 +20,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	h := handler.NewHandler()	
+	apiClient := jokes.NewJokeClient(cfg.JokeUrl)
+
+	h := handler.NewHandler(apiClient)	
 
 	r := chi.NewRouter()
 
