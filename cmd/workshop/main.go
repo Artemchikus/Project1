@@ -20,7 +20,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	apiClient := jokes.NewJokeClient(cfg.JokeUrl)
+	apiClient := jokes.NewJokeClient(cfg.JokeURL)
 
 	h := handler.NewHandler(apiClient)	
 

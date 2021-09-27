@@ -21,7 +21,7 @@ func NewJokeClient(baseUrl string) *JokeClient {
 }
 
 func (jc *JokeClient) GetJoke() (*api.JokeResponse, error) {
-	urlPath := jc.url + getJockePath
+	urlPath := jc.url+getJockePath
 	resp, err := http.Get(urlPath)
 	if err != nil {
 		return nil, err
