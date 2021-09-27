@@ -6,14 +6,13 @@ on:
       - master
 
 jobs:
-  lint: 
+  lint:
     runs-on: ubuntu-latest
     name: Run linter
     steps:
       - uses: actions/checkout@v2
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v2
-
 
   test:
     runs-on: ubuntu-latest
@@ -23,7 +22,8 @@ jobs:
       - uses: actions/setup-go@v1
         with:
           go-version: 1.17
-
+      - name: Run test
+        run: go mod tidy && go test ./...
 
   build:
     name: Deploy on Heroku
