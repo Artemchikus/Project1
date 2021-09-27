@@ -13,5 +13,5 @@ func NewHandler() *Handler {
 }
 
 func (h *Handler) Hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello MAN")
+	fmt.Fprint(w, "Блять Игорь как же я заебался")
 }
