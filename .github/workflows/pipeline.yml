@@ -40,6 +40,6 @@ jobs:
       - name: Add Heroku remote
         run: heroku git:remote -a $HEROKU_APP_NAME
         env:
-          HEROKU_APP_NAME: "${{ secrets.HEROKU_APP_NAME }}"
+          HEROKU_APP_NAME: "vrm-go-workshop-artemchikus"
       - name: Push to Heroku
         run: git push heroku master
