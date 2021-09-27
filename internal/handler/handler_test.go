@@ -31,15 +31,21 @@ func TestHandler_Hello(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			apiMock := &mocks.Client{}
 			apiMock.On("GetJoke").Return(tt.joke, tt.err)
-			h := NewHandler(apiMock)
+
+			h := NewHandler(apiMock, "")
+			
 			req, _ := http.NewRequest("GET", "/hello", nil)
 			rr := httptest.NewRecorder()
+			
 			h.Hello(rr, req)
+			
 			gotRaw, _ := ioutil.ReadAll(rr.Body)
 			got := string(gotRaw)
+			
 			if got != tt.bodyWant{
 				t.Errorf("wrong response body %s wanr %s", got, tt.bodyWant)
 			}
+			
 			if status := rr.Result().StatusCode; status != tt.codeWant  {
 				t.Errorf("wrong response status %d wanr %d", status, tt.codeWant)		
 			}
